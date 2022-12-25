@@ -20,11 +20,47 @@
 .link{
     text-decoration: none;
 }
-
+/*скидання зовнішніх відступів*/
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6,
+p{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ul{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+img{
+    display: block;
+}
+/*налаштування курсору*/
+button{
+    cursor: pointer;
+}
 /*наслідування від батьківського елемента*/
 body{
     font-family: var(--primary-font);
     font-weight: 400;
+}
+
+/*задаємо ширину контейнеру*/
+.container{
+    width: 1158px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*задаємо відступи між скціями*/
+.section{
+    padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 
@@ -38,6 +74,7 @@ body{
     line-height: 1.33;
     color: var(--nav-menu-color);
     letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 .logo-blue{    
     width: 44px;
@@ -76,9 +113,55 @@ body{
 .phone-lin:focus{
     color: var(--accent-color);
 }
+/*ставимо у рядок елементи хедеру*/
+.page-header-container{
+    display: flex;
+    align-items: center;
+}
+.page-nav{
+    display: flex;
+    align-items: center;
+}
+.logo-blue{
+    display: inline-flex;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    align-items: center;
+}
+.contact-phone-mail{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+/*робимо відступи*/
+.logo{
+    margin-right: 76px;
+}
+.menu-item:not(:last-child){
+    margin-right: 40px;
+}
+.contact-mail-adress{
+    margin-right: 40px;
+}
+.page-header{
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    /*встановлюємо рамку*/
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color:var(--footer-text-color);
+}
 /* /HEADER */
 
 /* HERO */
+.hero{
+    background: var(--nav-menu-color);
+    padding-top: 188px;
+    padding-bottom: 188px;
+}
 .hero-title{
     font-weight: 600;
     font-size: 56px;
@@ -86,11 +169,12 @@ body{
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--hero-text-color);
-    background: var(--nav-menu-color);
+    margin-bottom: 48px;
 }
 .button-hero{
     font-weight: 500;
     font-size: 16px;
+    font-family: var(--primary-font);
     line-height: 1.9;
     display: flex;
     align-items: center;
@@ -99,7 +183,9 @@ body{
     background: var(--Logo-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    cursor: pointer;
+    padding: 16px 32px 16px 32px;
+    margin: 0 auto;
+    display: block;
 }
 .button-hero:focus,
 .button-hero:hover{
@@ -109,7 +195,7 @@ body{
 
 /* SECTOIN DESCRIPTION */
 .services-section{
-    background: var(--background-color);
+    padding-bottom: 120px;
 }
 
 .title{
@@ -119,11 +205,48 @@ body{
     letter-spacing: 0.02em;
     color: var(--nav-menu-color);
 }
+.title-description{
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+.subtitle-description{
+    flex-wrap: wrap;
+}
+/*виставляємо елементи у рядок*/
+.list-description{
+    display: flex;
+    flex-basis: calc(100%-3*24/4);
+    column-gap: 24px;
+}
+
+/*встановлюємо відступ між елементами
+окрім останнього*/
+
+
 /* /SECTOIN DESCRIPTION */
+/*What are we doing*/
+.list-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: calc(100%-2*24/3);
+}
+/* /What are we doing*/
 
 /* TEAM */
+.team-icon{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    border-radius: 0px 0px 4px 4px;
+}
 .team-section{
     background: var(--logo-background-color);
+}
+.list-team{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: calc(100%-3*24/4);
+    gap: 24px;
 }
 .subtitle{
     font-size: 16px;
@@ -139,6 +262,9 @@ body{
     letter-spacing: 0.02em;
     text-transform: capitalize;
     color: var(--nav-menu-color);
+    /*задаємо відступи внутрішні, між елементами*/
+    margin-bottom: 72px;
+
 }
 .team-name{
     font-weight: 500;
@@ -147,6 +273,9 @@ body{
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--nav-menu-color);
+    /*задаємо внутрішні відступи*/
+    margin-bottom: 8px;
+    padding-top: 32px;
 }
 .team-profession{
     font-size: 16px;
@@ -154,6 +283,8 @@ body{
     text-align: center;
     letter-spacing: 0.02em;
     color: var(--text-color);
+    /*встановлюємо відступ внутрішній*/
+    padding-bottom: 32px;
 }
 /* /TEAM */
 
@@ -167,12 +298,17 @@ body{
     text-align: center;
     letter-spacing: 0.04em;
     color: var(--Logo-color);
-    cursor: pointer;
+    border-radius: 4px;
+    border:none;
+    /*задаємо внутрішні відступи кнопкам*/
+    padding: 12px 24px 12px 24px;
+
 }
 .button-filter:focus,
 .button-filter:hover{
     background-color: var(--accent-color);
     color: var(--hero-text-color);
+    box-shadow: 0px, 2px rgba(0, 0, 0, 0.08);
 }
 .menu-title{
     font-weight: 500;
@@ -180,13 +316,46 @@ body{
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--nav-menu-color);
+    /*проставляємо внутрішні відступи*/
+    margin-bottom: 8px;
+    padding-top: 32px;
+    padding-left: 16px;
 }
 .menu-text{
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--text-color);
+    padding-bottom: 32px;
+    padding-left: 16px;
 }
+
+.list-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 96px;
+    padding-bottom: 72px;
+}
+.menu-portfolio{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:24px;
+    row-gap: 48px;
+}
+.portfolio-cards{
+    flex-basis: calc(100%-48/3);
+}
+.portfolio-cards-wrapper{
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--footer-text-color);
+}
+.section-portfolio{
+    padding-bottom: 120px;
+}
+
 
 /* /PORTFOLIO */
 
@@ -195,7 +364,7 @@ body{
     background: var(--nav-menu-color);
 }
 .logo-footer{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;;
     font-weight: 800;
     font-size: 1.17;
     line-height: 21px;
@@ -204,6 +373,8 @@ body{
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--Logo-color);
+    /*задаємо зовнішні відступи*/
+    padding-top: 100px;
 }
 .logo-white{
     color: var(--logo-background-color);
@@ -213,6 +384,10 @@ body{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--footer-text-color);
+    /*задаємо зовнішні відступи*/
+    padding-bottom: 100px;
+
+    /*задаємо внутрішні відступи*/
+    margin-top: 16px;
 }
 /* /FOOTER */
-
